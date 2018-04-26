@@ -6,6 +6,7 @@ import runServer from './runServer';
 import webpackConfig from './webpack.config';
 import clean from './clean';
 import copy from './copy';
+import webConfig from '../config/web.config';
 
 async function start(){
   await run(clean);
@@ -67,8 +68,11 @@ async function start(){
         runServer((err, host) => {
           if (!err) {
             const bs = Browsersync.create();
+            let _host = webConfig.domain.replace("http://","").replace("https://","");
             bs.init({
               port: 4005,
+              open: _host === "" ? "local" :"external",
+              host: _host,
               proxy: {
                 target: host,
                 middleware: [wpMiddleware, ...hotMiddlewares],

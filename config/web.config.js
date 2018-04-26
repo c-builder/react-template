@@ -23,16 +23,16 @@ if(process.env.NODE_ENV == 'production') {
     hi: ''
   };
 }else{
-  var domain = 'http://dev.cwx508489.com:4005';
+  var domain = 'http://dev.cbuilder.com';
   var login = '';
   var loginOut = '';
-  var cookieDomain = '.cwx508489.com';
-  var cookieLang = 'dev_lang';
+  var cookieDomain = '.dev.cbuilder.com';
+  var cookieLang = 'dev_cbuilder_lang';
   var staticPath = '';
   var routePath = '';
   var _apiPort = 80;
   var prefix = {
-    hi: 'http://dev.cwx508489.com'
+    mini : 'http://dev.cbuilder.com'
   };
 }
 
@@ -46,6 +46,6 @@ module.exports = {
   routePath: routePath,
   apiPort: _apiPort,
   urls: {
-    getNavList: prefix.hi + '/hi/group/nav'
+    getNavList: prefix.mini + '/news/get'
   }
 };

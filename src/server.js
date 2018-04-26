@@ -6,6 +6,7 @@ import koa from 'koa';
 import bodyParser from 'koa-body';
 import session from 'koa-generic-session';
 import {resolve} from 'universal-router/universal-router';
+import changeLang from './middleware/ChangeLang';
 import routes from './routes';
 import config from './config';
 import webConfig from '../config/web.config';
@@ -27,16 +28,21 @@ server.use(session({
   key: 'ISON_sid'
 }));
 
+
+
 const reqServices = require.context('./service',true, /^(.*\.(js$))[^.]*$/igm);
 reqServices.keys().forEach(function(key){
   reqServices(key);
 });
 
+server.use(changeLang());
+
 server.use(function* (next){
   try {
     let req = this.request;
     let lang = req.lang;
-    let user_info = {}; //this.session.user_info_3ms || this.session.user_info;
+
+    let user_info = {};
 
     if(process.env.NODE_ENV == 'development'){
       let Revison = require('./core/Revison');
