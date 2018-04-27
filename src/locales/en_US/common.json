@@ -1,3 +1,14 @@
 {
-  "website": "Default"
+  "website": "Home",
+  "lang" : "中文",
+  "sourceCode" : "Source code",
+  "simpleTitle" : "A fully functional React framework that enables React projects to be built quickly.",
+  "list1" : "React scaffolding tools",
+  "list2" : "React client and server isomorphic rendering",
+  "list3" : "ES6, ES7 syntax support",
+  "list4" : "Unidirectional data flow: Based on Alt implementation",
+  "list5" : "i18n",
+  "list6" : "Sprite-CSS",
+  "list7" : "Browsersync enables browsers to respond to your file changes in real time and quickly, while supporting React hot swap.",
+  "list8" : "Koa"
 }

@@ -1,3 +1,14 @@
 {
-  "website": "首页"
+  "website": "首页",
+  "lang" : "EN",
+  "sourceCode" : "下载源码",
+  "simpleTitle" : "一套功能完整的React框架，能够快速构建React项目",
+  "list1" : "React脚手架工具",
+  "list2" : "React前后端同构渲染",
+  "list3" : "ES6、ES7语法支持",
+  "list4" : "单向数据流：基于Alt实现",
+  "list5" : "i18n国际化",
+  "list6" : "雪碧图",
+  "list7" : "Browsersync能让浏览器实时、快速响应您的文件更改,同时支持React热插拔",
+  "list8" : "Koa"
 }

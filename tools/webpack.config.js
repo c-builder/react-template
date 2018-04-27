@@ -1,5 +1,5 @@
 /**
- *
+ * webpack
  */
 import path from 'path';
 import webpack from 'webpack';
@@ -21,8 +21,6 @@ function createClitePage(route) {
   fs.writeFileSync(`${tmpFolder}/${route}.js`, str, 'utf8');
 }
 
-
-//设置前端页面入口
 let CLIENT_ENTRY = {};
 fs.readdirSync('./src/routes').map((file) => {
 

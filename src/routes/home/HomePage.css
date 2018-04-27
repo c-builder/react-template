@@ -1,0 +1,39 @@
+.main-block {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+p.h1 {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.main {
+  margin-top: 20px;
+  min-height: 500px;
+}
+
+.main ul {
+  list-style: disc;
+  margin-left: 15px;
+}
+
+.main ul li {
+  margin-top: 15px;
+}
+
+.download{
+  margin-top: 80px;
+}
+
+.download .soure-code {
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+  padding: 10px 0;
+  color: #FFF;
+  border-radius: 6px;
+  background: #ea6f5a;
+}

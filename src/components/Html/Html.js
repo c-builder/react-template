@@ -26,14 +26,14 @@ class Html extends Component{
           <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
           <title>{this.props.title}</title>
           {
-            this.props.vendorCss && <link rel="stylessheet" href={`${this.props.vendorCss}`} />
+            this.props.vendorCss && <link rel="stylesheet" href={`${this.props.vendorCss}`} />
           }
           {
-            this.props.commonCss && <link rel="stylessheet" href={`${this.props.commonCss}`} />
+            this.props.commonCss && <link rel="stylesheet" href={`${this.props.commonCss}`} />
           }
           {
             typeof cssEntry != "undefined" && cssEntry && cssEntry.map((item,idx)=>{
-              return <link key={idx} rel="stylessheet" href={`${item}`} />;
+              return <link key={idx} rel="stylesheet" href={`${item}`} />;
             })
           }
           <script dangerouslySetInnerHTML={{__html:`window['userInfo']=([$userInfo]);`}} />
