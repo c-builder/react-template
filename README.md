@@ -10,12 +10,12 @@
 * 雪碧图
 * Browsersync能让浏览器实时、快速响应您的文件更改,同时支持React热插拔
 
-###安装依赖包
+### 安装依赖包
 ```javascript
 npm install
 ```
 
-###启动
+### 启动
 ```javascript
 npm start
 ```
