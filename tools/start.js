@@ -65,14 +65,13 @@ async function start(){
             const bs = Browsersync.create();
             let _host = webConfig.domain.replace("http://","").replace("https://","");
             bs.init({
-              port: 4005,
+              port: 4001,
               open: _host === "" ? "local" :"external",
               host: _host,
               proxy: {
                 target: host,
                 middleware: [wpMiddleware, ...hotMiddlewares],
               },
-
               files: ['build/public/**/*.*'],
             }, resolve);
             handleServerBundleComplete = runServer;

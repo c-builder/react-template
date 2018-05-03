@@ -17,7 +17,7 @@ function qs(flag) {
   return b[flag];
 }
 
-function getLang(type){
+function getLang(){
   let lang = qs('l');
   let _lang = '';
   if(lang){
@@ -25,11 +25,7 @@ function getLang(type){
   }else{
     lang = Cookie.get(webConfig.cookieLang) || 'zh-cn';
   }
-  if(type && type === 'forUrl'){
-    _lang = lang;
-  }else{
-    _lang = lang === 'en' ? 'en_US' : 'zh_CN';
-  }
+  _lang = lang === 'en' ? 'en_US' : 'zh_CN';
   return _lang;
 }
 
