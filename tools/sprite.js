@@ -4,7 +4,7 @@ import path from 'path';
 
 webpack({
   plugins: [new SpritesmithPlugin({
-      // 目标小图标
+      // 源小图片
       src: {
         cwd: path.resolve(__dirname, '../src/components/App/images/icons'),
         glob: '*.png'
@@ -15,10 +15,10 @@ webpack({
         css: path.resolve(__dirname, '../src/components/App/icons.css')
       },
       apiOptions: {
-        cssImageRef: './images/icon-sprite.png'
+        cssImageRef: './images/icon-sprite.png'  //设置样式文件内的雪碧图名称和路径
       },
       spritesmithOptions: {
-        algorithm: 'top-down'
+        algorithm: 'top-down'  //雪碧图的布置方向
       }
     })]
 }).run(function(err, stats) {

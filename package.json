@@ -64,7 +64,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.11",
     "webpack-hot-middleware": "^2.6.0",
-    "webpack-middleware": "^1.4.0"
+    "webpack-middleware": "^1.4.0",
+    "webpack-spritesmith": "^0.4.1"
   },
   "jest": {
     "rootDir": "./src",
