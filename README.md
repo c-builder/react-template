@@ -5,7 +5,7 @@
 * ES6、ES7语法支持
 * 单向数据流：基于Alt实现
 * i18n国际化
-* LESS、SASS、PostCss
+* LESS、SASS、PostCSS
 * webpack
 * 雪碧图
 * Browsersync能让浏览器实时、快速响应您的文件更改,同时支持React热插拔
