@@ -79,7 +79,7 @@
     "csslint": "csscomb src/components --lint --verbose",
     "csscomb": "csscomb src/components --verbose",
     "test": "eslint src && jest",
-    "sprite": "node tools/sprite",
+    "sprite": "babel-node tools/sprite",
     "clean": "babel-node tools/run clean",
     "copy": "babel-node tools/run copy",
     "bundle": "babel-node tools/run bundle",
