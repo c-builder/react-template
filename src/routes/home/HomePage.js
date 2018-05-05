@@ -31,7 +31,7 @@ export default class HomePage extends Component {
               <li>{i18n.t('common:list3')}</li>
               <li>{i18n.t('common:list4')}</li>
               <li>{i18n.t('common:list5')}</li>
-              <li>LESS、SASS、PostCss</li>
+              <li>LESS、SASS、PostCSS</li>
               <li>webpack</li>
               <li>{i18n.t('common:list6')}</li>
               <li>{i18n.t('common:list7')}</li>
