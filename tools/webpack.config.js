@@ -118,7 +118,7 @@ const config = {
       require('postcss-import')({
         addDependencyTo: bundler
       }),
-      require('postcss-cssnext')(),
+      require('postcss-cssnext')({browsers: ['last 10 Chrome versions', 'last 5 Firefox versions', 'Safari >= 6', 'ie > 8']}),
       require('precss')(),
     ];
   },

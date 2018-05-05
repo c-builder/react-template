@@ -4,7 +4,7 @@ import CONSTANTS from '../../constants';
 import i18n from 'i18n';
 import webConfig from '../../../config/web.config';
 import utils from '../../utils/utils';
-import './index.scss';
+import './index.less';
 
 export default class Header extends Component {
   constructor(props){
