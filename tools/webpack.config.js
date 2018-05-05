@@ -163,6 +163,9 @@ const clientConfig = extend(true, {}, config, {
       }, {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract("style-loader", "css!postcss!less")
+      }, {
+        test: /\.(scss|sass)$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css!postcss!sass")
       }
     ]
   },
@@ -219,6 +222,9 @@ const serverConfig = extend(true, {}, config, {
       }, {
         test: /\.less$/,
         loader: 'css!postcss!less',
+      }, {
+        test: /\.(scss|sass)$/,
+        loader: 'css!postcss!sass',
       }
     ],
   }
