@@ -6,6 +6,8 @@ import del from 'del';
 import webConfig from '../config/web.config.js';
 
 async function revison(){
+  del(['build/images','build/fonts','build/*.eot','build/*.ttf','build/*.svg','build/*.woff'],{dot: true});
+
   let revisonData = await getVisionData('./build/public/js/libs');
   if(revisonData){
     let assets = {};
@@ -19,22 +21,17 @@ async function revison(){
       let newData = data.replace('};',',');
       let assetsStr = JSON.stringify(assets);
       newData += assetsStr.substr(1, assetsStr.length - 1);
-      fs.writeFile('./build/assets.js',newData);
+      fs.writeFile('./build/assets.js',newData,function(){});
     });
   }
-
-  setTimeout(()=>{
-    del(['build/images','build/fonts','build/*.eot','build/*.ttf','build/*.svg','build/*.woff'],{dot: true})
-  },2000);
 }
 
 async function getVisionData(_root,_filter){
   return new Promise(function(resolve,reject){
-    var visionData = [];
     readdirp({
       root: _root,
       fileFilter: _filter || ['*.js']
-    },function(err, filesObj){
+    }, async function(err, filesObj){
       if(!filesObj){
         resolve(null);
       }
@@ -42,20 +39,28 @@ async function getVisionData(_root,_filter){
       if(process.env.NODE_ENV == 'uat' || process.env.NODE_ENV == 'production') {
         staticPath = `${webConfig.staticPath}`;
       }
-      filesObj.files.map(async function(file){
-        let buf = await readFile(file.fullPath);
-        let hash = crypto.createHash('md5').update(buf).digest('hex').slice(0,16);
-        visionData.push({
+
+      let hashData =  await getHashData(filesObj.files);
+      resolve(filesObj.files.map((file, idx)=>{
+        return {
           name: path.basename(file.fullPath,'js'),
           path: `${staticPath}js/libs/${file.path.replace(/\\/ig,"/")}`,
-          hash: hash
-        });
-      });
-      setTimeout(()=>{
-        resolve(visionData);
-      },500);
+          hash: hashData[idx]
+        }
+      }));
     });
   });
+}
+
+async function getHashData(files){
+  let _hash = [];
+  for(let file of files){
+    let rf = readFile(file.fullPath);
+    let buf = await rf;
+    let hash = crypto.createHash('md5').update(buf).digest('hex').slice(0,16);
+    _hash.push(hash);
+  }
+  return _hash;
 }
 
 async function readFile(fullPath){
