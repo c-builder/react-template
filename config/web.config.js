@@ -1,14 +1,14 @@
 if(process.env.NODE_ENV == 'production') {
-  var domain = '';
+  var domain = 'http://dev.cbuilder.com';
   var login = '';
   var loginOut = '';
-  var cookieDomain = '';
-  var cookieLang = '';
+  var cookieDomain = '.dev.cbuilder.com';
+  var cookieLang = 'dev_cbuilder_lang';
   var staticPath = '';
   var routePath = '';
   var _apiPort = 80;
   var prefix = {
-    hi: ''
+    mini : 'http://dev.cbuilder.com'
   };
 }else if(process.env.NODE_ENV == 'uat'){
   var domain = '';
@@ -20,7 +20,7 @@ if(process.env.NODE_ENV == 'production') {
   var routePath = '';
   var _apiPort = 80;
   var prefix = {
-    hi: ''
+    mini: ''
   };
 }else{
   var domain = 'http://dev.cbuilder.com';
